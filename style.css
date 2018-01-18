@@ -34,3 +34,8 @@ div {
   background-image: url("https://vignette.wikia.nocookie.net/pkmnshuffle/images/7/77/Pikachu.png/revision/latest?cb=20170407192412");
   background-size: cover;
 }
+
+.lost {
+  background-image: url("http://i0.kym-cdn.com/entries/icons/facebook/000/000/260/youjustlost.jpg");
+  background-size: cover;
+}

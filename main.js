@@ -26,6 +26,10 @@ let holes = document.getElementsByTagName('div');
 let pika = document.getElementById('pika');
 let hammer = document.getElementById('hammer');
 let missed = document.getElementById('miss');
+let youLost = document.getElementById('lost');
+
+let game;
+let lifeLost;
 
 let spawnInRandomCell = function() {  // Makes a mole appear in a random place and adds the event listeners to the div
   if (viesRestantes > 0) {
@@ -40,6 +44,11 @@ let spawnInRandomCell = function() {  // Makes a mole appear in a random place a
         pika.play();
       };
     };
+  } else {
+    clearInterval(game);
+    fifth.classList.add('lost');
+    youLost.play();
+    reset.disabled = false;
   };
 };
 
@@ -51,6 +60,9 @@ let miss = function() { // The mole automatically disappears and player looses a
       viesRestantes--;
       compteurVies.innerText = viesRestantes;
     };
+  }
+  if (viesRestantes === 0) {
+    clearInterval(lifeLost);
   };
 };
 
@@ -141,16 +153,21 @@ let moleDisappearsByKey = function(event) { // Makes the mole disappear on corre
 };
 
 let launch = function () { // Launches the game
-  setInterval(spawnInRandomCell, 1000);
-  setInterval(miss, 999);
+  game = setInterval(spawnInRandomCell, 1000);
+  lifeLost = setInterval(miss, 999);
   start.disabled = true;
 };
 
+
+
 let restart = function () { // Reset the lives and points
+  reset.disabled = true;
   viesRestantes = 10;
   points = 0;
   compteurVies.innerText = viesRestantes;
   compteurPoints.innerText = points;
+  fifth.classList.remove('lost');
+  launch();
 };
 
 start.addEventListener('click', launch);
