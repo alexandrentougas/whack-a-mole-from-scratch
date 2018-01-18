@@ -1,0 +1,36 @@
+html,body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  width: 100%;
+  text-align: center;
+}
+
+h1 {
+  padding-top: 30px;
+}
+
+section {
+  padding-top: 15px;
+}
+
+button {
+  width: 120px;
+  height: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+div {
+  height: 200px;
+  width: 200px;
+  display: inline-block;
+  background-color: brown;
+}
+
+.mole {
+  background-image: url("https://vignette.wikia.nocookie.net/pkmnshuffle/images/7/77/Pikachu.png/revision/latest?cb=20170407192412");
+  background-size: cover;
+}
