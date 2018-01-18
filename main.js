@@ -10,6 +10,7 @@ compteurPoints.innerText = points;
 
 let start = document.getElementById('start');
 let reset = document.getElementById('reset');
+reset.disabled = true;
 
 let first = document.getElementById('one');
 let second = document.getElementById('two')
