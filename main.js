@@ -143,6 +143,7 @@ let moleDisappearsByKey = function(event) { // Makes the mole disappear on corre
 let launch = function () { // Launches the game
   setInterval(spawnInRandomCell, 1000);
   setInterval(miss, 999);
+  start.disabled = true;
 };
 
 let restart = function () { // Reset the lives and points
